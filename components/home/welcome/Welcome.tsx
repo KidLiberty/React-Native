@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, Image, ListRenderItem, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'
@@ -30,7 +30,7 @@ const Welcome: React.FC<WelcomeProps> = ({ }) => {
           />
         </View>
 
-        <TouchableOpacity style={styles.searchBtn} onPress={() => { }}>
+        <TouchableOpacity style={styles.searchBtn}>
           <Image
             source={icons.search}
             resizeMode='contain'
@@ -43,10 +43,19 @@ const Welcome: React.FC<WelcomeProps> = ({ }) => {
         <FlatList
           data={jobTypes}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.tab(activeJobType, item)}>
-              <Text>{item}</Text>
+            <TouchableOpacity
+              style={styles.tab(activeJobType, item)}
+              onPress={() => {
+                setActiveJobType(item)
+                router.push(`search/${item}`)
+              }}
+            >
+              <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
+          keyExtractor={item => item} // Like web map key
+          contentContainerStyle={{ columnGap: SIZES.small }}
+          horizontal
         />
       </View>
     </View>

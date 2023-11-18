@@ -18,7 +18,7 @@ const styles = StyleSheet.create<StyleProps>({
     shadowColor: COLORS.white,
   }),
   btnText: (name: string, activeTab: string) => ({
-    fontFamily: "DMMedium",
+    // fontFamily: "DMMedium",
     fontSize: SIZES.small,
     color: name === activeTab ? "#C3BFCC" : "#AAA9B8",
   }),
