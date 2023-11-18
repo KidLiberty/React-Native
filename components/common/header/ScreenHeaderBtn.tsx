@@ -12,7 +12,7 @@ type ScreenHeaderBtnProps = {
 
 const ScreenHeaderBtn: React.FC<ScreenHeaderBtnProps> = ({ iconUrl, dimension, handlePress }) => {
   return (
-    <TouchableOpacity style={styles.btnContainer}>
+    <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
       <Image
         source={iconUrl}
         resizeMode='cover'
