@@ -1,13 +1,14 @@
 import { StyleSheet } from "react-native";
+import { StyleProps } from 'react-native-reanimated';
 
 import { COLORS, SHADOWS, SIZES } from "../../../constants";
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<StyleProps>({
   container: {
     marginTop: SIZES.small,
     marginBottom: SIZES.small / 2,
   },
-  btn: (name, activeTab) => ({
+  btn: (name: string, activeTab: string) => ({
     paddingVertical: SIZES.medium,
     paddingHorizontal: SIZES.xLarge,
     backgroundColor: name === activeTab ? COLORS.primary : "#F3F4F8",
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
   }),
-  btnText: (name, activeTab) => ({
+  btnText: (name: string, activeTab: string) => ({
     fontFamily: "DMMedium",
     fontSize: SIZES.small,
     color: name === activeTab ? "#C3BFCC" : "#AAA9B8",

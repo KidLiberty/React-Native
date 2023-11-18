@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { StyleProps } from 'react-native-reanimated';
 
 import { FONT, SIZES, COLORS } from "../../../constants";
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<StyleProps>({
   container: {
     marginTop: SIZES.xLarge,
   },

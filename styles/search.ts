@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { StyleProps } from 'react-native-reanimated';
 
 import { COLORS, FONT, SIZES } from "../constants";
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<StyleProps>({
     container: {
         width: "100%",
     },
