@@ -6,7 +6,7 @@ import styles from './popularjobcard.style'
 
 interface PopularJobCardProps {
   item: JobResponseObject
-  selectedJob: unknown
+  selectedJob: string
   handleCardPress: (item: JobResponseObject) => void
 }
 
